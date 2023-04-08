@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plant_Doctor.View.P_Diagnostic">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Label
+               BackgroundColor="White"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+             />
+            <FlexLayout Direction="Row" AlignItems="End">
+                <FlexLayout.Padding>0,0,0,0</FlexLayout.Padding>
+                <StackLayout>
+                    <StackLayout Padding="0,0,0,0" Margin="0,0,0,-20">
+                        <Image Source="uploadicon.png" Opacity="0.4" HeightRequest="50"/>
+                        <Label Text="upload Your Images" HorizontalTextAlignment="Center"  FontSize="Medium"/>
+                    </StackLayout>
+                    <StackLayout Padding="338,0,20,0">
+                        <Frame Padding="0,0,0,0" HasShadow="True"  Margin="0,0,0,0" IsClippedToBounds="True"  TranslationY="30" CornerRadius="22">
+                            <ImageButton Source="cameraicon.png" BackgroundColor="GhostWhite" HeightRequest="48"  Aspect="Fill"/>
+                        </Frame>
+                    </StackLayout>
+                    <Frame BorderColor="blue" BackgroundColor="AliceBlue" CornerRadius="30" Padding="25,15,25,44" HasShadow="True" TranslationY="18">
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                          <Label Text="Enter as much information as possible" TextColor="Black" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center"/>
+                        <Label Text="Plant Name:" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                        <Frame Padding="0" Margin="0,0,0,20" IsClippedToBounds="True" CornerRadius="6">
+                            <Entry  Placeholder="e.g Common name, Scientific, Variety" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                        </Frame>
+                        <Label Text="Primary Symtoms:" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                        <Frame Padding="0" Margin="0,0,0,20" IsClippedToBounds="True" CornerRadius="6">
+                            <Entry Placeholder="e.g Yellowing, Wilting, Stunting, Death, Leaf spot" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                        </Frame>
+                        <Label Text="Plant Setting:" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                        <Frame Padding="0" Margin="0,0,0,20" IsClippedToBounds="True" CornerRadius="6">
+                            <Entry Placeholder="e.g Indoor, Landscape, Garden, Nursery, Farm, Forest" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                        </Frame>
+                        <Label Text="Geographical Location:" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                        <Frame Padding="0"  Margin="0,0,0,10" IsClippedToBounds="True" CornerRadius="6">
+                            <Entry Placeholder="e.g City, Country, Region, Bearing, etc" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                        </Frame>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Button Clicked="P_backfxn" CornerRadius="10" WidthRequest="150" HorizontalOptions="Center" Text="BACK" BackgroundColor="GreenYellow" TextColor="White" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+                            <Button Clicked="P_subfxn" CornerRadius="10" WidthRequest="150" HorizontalOptions="Center" Text="SUBMIT" BackgroundColor="GreenYellow" TextColor="White" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+                        </FlexLayout>
+                       </StackLayout>
+                    </Frame>
+                    
+                </StackLayout>
+            </FlexLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

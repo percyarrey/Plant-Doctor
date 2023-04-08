@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plant_Doctor.View.Signup">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image
+               Aspect="AspectFill"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+               Source="loginback.png"
+             />
+            <FlexLayout Direction="Row"  JustifyContent="Center" AlignItems="End">
+                <FlexLayout.Padding>0,0,0,100</FlexLayout.Padding>
+                <StackLayout WidthRequest="360" Spacing="0">
+                    <Image  Source="logo.png" HeightRequest="110" />
+                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="60" FontAttributes="Bold" Margin="0,0,0,65" TextColor="White"/>
+                    <Frame Padding="0" Margin="0,0,0,20" IsClippedToBounds="True" CornerRadius="6">
+                        <Entry x:Name="fname"  Placeholder="Enter First Name" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                    </Frame>
+                    <Frame Padding="0" Margin="0,0,0,20" IsClippedToBounds="True" CornerRadius="6">
+                        <Entry x:Name="lname" Placeholder="Enter Last Name" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                    </Frame>
+                    <Frame Padding="0" Margin="0,0,0,20" IsClippedToBounds="True" CornerRadius="6">
+                        <Entry x:Name="email" Placeholder="Enter email address" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                    </Frame>
+                    <Frame Padding="0"  Margin="0,0,0,10" IsClippedToBounds="True" CornerRadius="6">
+                        <Entry x:Name="pwd" Placeholder="Enter password" HorizontalOptions="FillAndExpand" IsPassword="True" BackgroundColor="White"/>
+                    </Frame>
+                    <FlexLayout>
+                        <CheckBox x:Name="check" Color="AliceBlue"/>
+                        <Label VerticalTextAlignment="Center" Margin="10,0,0,0" FontSize="16.8" Text="I AGREE TO THE TERMS AND CONDITIONS" TextColor="White"/>
+                    </FlexLayout>
+                    <FlexLayout JustifyContent="SpaceBetween">
+                        <Button Clicked="Backfxn" Text="Back" BackgroundColor="Transparent" TextColor="Aqua"   FontSize="20"  TextTransform="None" FontAttributes="none" />
+                        <Button Clicked="Ssignupfxn" Text="Sign up" BackgroundColor="Transparent" TextColor="Aqua"  FontSize="20"  TextTransform="None" FontAttributes="none" />
+                    </FlexLayout>
+                </StackLayout>
+            </FlexLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

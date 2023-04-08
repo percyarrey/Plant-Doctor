@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plant_Doctor.MainPage">
+
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image
+               Aspect="AspectFill"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+               Source="homeback.png"
+             />
+            <FlexLayout Direction="Row"  JustifyContent="Center" AlignItems="End">
+                <FlexLayout.Padding>0,0,0,140</FlexLayout.Padding>
+                <StackLayout WidthRequest="360">
+                    <StackLayout Padding="270,0,0,0" Margin="0,0,38,0">
+                        <Frame Padding="0,0,0,0" HasShadow="True"  Margin="0,0,0,0" IsClippedToBounds="True" TranslationX="20" TranslationY="8" CornerRadius="22">
+                            <ImageButton Clicked="Mainsignup" Source="usericon.png" BackgroundColor="WhiteSmoke" HeightRequest="50"  Aspect="Fill"/>
+                        </Frame>
+                    </StackLayout>
+                    <Image Source="logo.png" HeightRequest="110" />
+                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="60" FontAttributes="Bold" Margin="0,0,0,20" TextColor="White"/>
+                    <Label Text="Get Solutions To Any And All Plant Related Problems From Experts With Our Mobile App." TextColor="White" FontSize="26" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,0,0,70" />
+                    <Button Clicked="P_Diagnosticfxn" CornerRadius="10" Margin="0,0,0,30" HorizontalOptions="Center" Text="REQUEST DIAGNOSIS" BackgroundColor="LightSeaGreen" TextColor="White" FontSize="Large" TextTransform="None" FontAttributes="none" />
+                    <Button Clicked="Aboutfxn" CornerRadius="10" HorizontalOptions="Center" Text="ABOUT" BackgroundColor="LightSeaGreen" TextColor="White" FontSize="Large" TextTransform="None" FontAttributes="none" />
+                </StackLayout>
+            </FlexLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+
+</ContentPage>

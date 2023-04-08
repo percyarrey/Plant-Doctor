@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plant_Doctor.View.login">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image
+               Aspect="AspectFill"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+               Source="loginback.png"
+             />
+            <FlexLayout Direction="Row"  JustifyContent="Center" AlignItems="End">
+                <FlexLayout.Padding>0,0,0,80</FlexLayout.Padding>
+                <StackLayout WidthRequest="360" Spacing="0">
+                    <Image  Source="logo.png" HeightRequest="110" />
+                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="60" FontAttributes="Bold" Margin="0,0,0,139" TextColor="White"/>
+                    <Frame Padding="0" Margin="0,0,0,28" IsClippedToBounds="True" CornerRadius="6">
+                        <Entry x:Name="email" Placeholder="Enter email address" TextColor="Black" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                    </Frame>
+                    <Frame Padding="0" Margin="0,0,0,38" IsClippedToBounds="True" CornerRadius="6">
+                        <Entry x:Name="pwd"  Placeholder="Enter password"
+                               HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                    </Frame>
+                    <Button Clicked="For_pwdfxn" CornerRadius="10" HorizontalOptions="End" Text="Forgot password?" BackgroundColor="Transparent" TextColor="Aqua" FontSize="Large" TextTransform="None" FontAttributes="none" />
+                    <FlexLayout JustifyContent="End">
+                        <Button Clicked="Loginfxn" CornerRadius="10" HorizontalOptions="End" Text="Login" BackgroundColor="Transparent" TextColor="Aqua" FontSize="20" TextTransform="None" FontAttributes="none" />
+                        <Button Clicked="Signupfxn" CornerRadius="10" HorizontalOptions="End" Text="Sign up" BackgroundColor="Transparent" TextColor="Aqua"  FontSize="20"  TextTransform="None" FontAttributes="none" />
+                    </FlexLayout>
+                </StackLayout>
+            </FlexLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
