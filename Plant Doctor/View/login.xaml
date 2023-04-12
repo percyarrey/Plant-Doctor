@@ -1,31 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Plant_Doctor.View.login">
+             x:Class="Plant_Doctor.View.Login">
     <ContentPage.Content>
-        <RelativeLayout>
+        <RelativeLayout  BackgroundColor="#85D6D1">
             <Image
                Aspect="AspectFill"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
-               Source="loginback.png"
+               Source="login2back.png"
              />
             <FlexLayout Direction="Row"  JustifyContent="Center" AlignItems="End">
                 <FlexLayout.Padding>0,0,0,80</FlexLayout.Padding>
-                <StackLayout WidthRequest="360" Spacing="0">
+                <StackLayout Padding="15,0,15,0" Spacing="0">
                     <Image  Source="logo.png" HeightRequest="110" />
-                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="60" FontAttributes="Bold" Margin="0,0,0,139" TextColor="White"/>
+                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,75" TextColor="black"/>
+                    <Label Text="Email" FontSize="Title" FontAttributes="Bold" Margin="0,0,0,3" TextColor="White"/>
                     <Frame Padding="0" Margin="0,0,0,28" IsClippedToBounds="True" CornerRadius="6">
                         <Entry x:Name="email" Placeholder="Enter email address" TextColor="Black" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
                     </Frame>
-                    <Frame Padding="0" Margin="0,0,0,38" IsClippedToBounds="True" CornerRadius="6">
-                        <Entry x:Name="pwd"  Placeholder="Enter password"
+                    <Label Text="Password" FontSize="Title" FontAttributes="Bold" Margin="0,0,0,3" TextColor="White"/>
+                    <Frame Padding="0" Margin="0,0,0,0" IsClippedToBounds="True" CornerRadius="6">
+                        <Entry x:Name="pwd" IsPassword="True"  Placeholder="Enter password"
                                HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
                     </Frame>
-                    <Button Clicked="For_pwdfxn" CornerRadius="10" HorizontalOptions="End" Text="Forgot password?" BackgroundColor="Transparent" TextColor="Aqua" FontSize="Large" TextTransform="None" FontAttributes="none" />
+                    <FlexLayout>
+                        <CheckBox Color="White" x:Name="pwdcheck" CheckedChanged="CheckBox_CheckedChanged"/>
+                        <Label Text="Show password" FontSize="Body" FontAttributes="None" Margin="0,5,0,0" TextColor="White"/>
+                    </FlexLayout>
+                    <Button Margin="0,5,0,10" Clicked="For_pwdfxn" CornerRadius="10" HorizontalOptions="Start" Text="Forgot password?" BackgroundColor="Transparent" TextColor="white" FontSize="Large" TextTransform="None" FontAttributes="none" />
                     <FlexLayout JustifyContent="End">
-                        <Button Clicked="Loginfxn" CornerRadius="10" HorizontalOptions="End" Text="Login" BackgroundColor="Transparent" TextColor="Aqua" FontSize="20" TextTransform="None" FontAttributes="none" />
-                        <Button Clicked="Signupfxn" CornerRadius="10" HorizontalOptions="End" Text="Sign up" BackgroundColor="Transparent" TextColor="Aqua"  FontSize="20"  TextTransform="None" FontAttributes="none" />
+                        <Button BorderWidth="1" BorderColor="#CACACA"   Clicked="Signupfxn" CornerRadius="10" Margin="0,0,30,10" HorizontalOptions="Center" Text="Signup" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+                        <Button BorderWidth="1" BorderColor="#CACACA"   Clicked="Loginfxn" CornerRadius="10" Margin="0,0,0,10" HorizontalOptions="Center" Text="Login" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
                     </FlexLayout>
                 </StackLayout>
             </FlexLayout>

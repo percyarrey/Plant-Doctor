@@ -12,7 +12,6 @@ namespace Plant_Doctor
             InitializeComponent();
             MainPage =new NavigationPage(new MainPage());
         }
-
         protected override void OnStart()
         {
 
@@ -20,6 +19,7 @@ namespace Plant_Doctor
 
         protected override void OnSleep()
         {
+
         }
 
         protected override void OnResume()

@@ -26,31 +26,39 @@ namespace Plant_Doctor.View
         }
         private void Ssignupfxn(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(fname.Text) && !string.IsNullOrEmpty(lname.Text) && !string.IsNullOrEmpty(email.Text) && !string.IsNullOrEmpty(pwd.Text))
+            if (!string.IsNullOrEmpty(fname.Text) && !string.IsNullOrEmpty(comfirmpwd.Text) && !string.IsNullOrEmpty(lname.Text) && !string.IsNullOrEmpty(email.Text) && !string.IsNullOrEmpty(pwd.Text))
             {   
                 if(check.IsChecked == true) {
-                    var dppath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
-                    var db = new SQLiteConnection(dppath);
-                    db.CreateTable<reguserdata>();
-                    var item = new reguserdata()
+                    if(comfirmpwd.Text == pwd.Text)
                     {
-                        fname = fname.Text,
-                        lname = lname.Text,
-                        email = email.Text,
-                        pwd = pwd.Text,
-                        check = check.IsChecked
-                    };
-                    //Navigation.PopModalAsync();
-                    Device.BeginInvokeOnMainThread(async () =>
-                    {
-                        var result= await DisplayAlert("Congratulation", "User Registration Successfull", "Continue", "Cancel");
-                        if (result)
+                        var dppath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+                        var db = new SQLiteConnection(dppath);
+                        db.CreateTable<reguserdata>();
+                        var item = new reguserdata()
                         {
-                            await Navigation.PushModalAsync(new login());
-                            db.Insert(item);
-                        }
-                        
-                    });
+                            fname = fname.Text,
+                            lname = lname.Text,
+                            email = email.Text,
+                            pwd = pwd.Text,
+                            check = check.IsChecked
+                        };
+                        //Navigation.PopModalAsync();
+                        Device.BeginInvokeOnMainThread(async () =>
+                        {
+                            var result = await DisplayAlert("Congratulation", "User Registration Successfull", "Continue", "Cancel");
+                            if (result)
+                            {
+                                await Navigation.PushModalAsync(new Login());
+                                db.Insert(item);
+                            }
+
+                        });
+                    }
+                    else
+                    {
+                        DisplayAlert("Error", "Password thus not Match", "OK");
+                    }
+                    
                 }
                 else
                 {
@@ -63,6 +71,19 @@ namespace Plant_Doctor.View
                 DisplayAlert("Error", "Please Fill The Information Required", "OK");
             }
             
+        }
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (pwdcheck.IsChecked)
+            {
+                pwd.IsPassword = false;
+                comfirmpwd.IsPassword = false;
+            }
+            else
+            {
+                pwd.IsPassword = true;
+                comfirmpwd.IsPassword = true;
+            }
         }
     }
 }

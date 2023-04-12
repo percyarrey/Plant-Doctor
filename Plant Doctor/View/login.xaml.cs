@@ -14,34 +14,46 @@ using Xamarin.Forms.Xaml;
 namespace Plant_Doctor.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class login : ContentPage
+    public partial class Login : ContentPage
     {
-        public login()
+        public Login()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-        private void Loginfxn(object sender, EventArgs e)
+        private async void Loginfxn(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(email.Text) && !string.IsNullOrEmpty(pwd.Text)){
                 var dppath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
                 var db = new SQLiteConnection(dppath);
-                var myquery = db.Table<reguserdata>().Where(u => u.email.Equals(email.Text) && u.pwd.Equals(u.email)).FirstOrDefault();
-                if (myquery != null)
+                if (db.GetTableInfo("reguserdata").Count>0)
                 {
-                    DisplayAlert("Message", "Welcome Back", "Continue");
-                    App.Current.MainPage = new NavigationPage(new MainPage());
+                    var myquery = db.Table<reguserdata>().Where(u => u.email.Equals(email.Text) && u.pwd.Equals(pwd.Text)).FirstOrDefault();
+                    if (myquery != null)
+                    {
+                        var newname = myquery.fname;
+                        newname = "Welcome " + newname +" to the Group One Moblie App";
+                        _ = DisplayAlert("Message", newname, "Continue");
+                        App.Current.MainPage = new NavigationPage(new MainPage());
+                    }
+                    else
+                    {
+                        _ = DisplayAlert("Error", "Wrong Email and Password", "Try Again");
+                    }
                 }
                 else
                 {
-                    Device.BeginInvokeOnMainThread(() =>
+                    var result= await DisplayAlert("You have No Created Account", "Would you like to Sign Up ","Sign Up","Cancel");
+                    if (result)
                     {
-                        DisplayAlert("Error", "Wrong Login and SignUp", "Continue");
-                    });
+                        _ = Navigation.PushModalAsync(new Signup());
+                    }
+
                 }
             }
-            else{
-                DisplayAlert("Error", "Please Fill The Information Required", "OK");
+            else
+ {
+                _ = DisplayAlert("Error", "Please Fill The Information Required", "OK");
             }
 
         }
@@ -53,6 +65,17 @@ namespace Plant_Doctor.View
         {
             _ = DisplayAlert("Alert", "Page not Avialable yet", "OK");
         }
-        
+
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (pwdcheck.IsChecked)
+            {
+                pwd.IsPassword= false;
+            }
+            else
+            {
+                pwd.IsPassword= true;
+            }
+        }
     }  
 }
