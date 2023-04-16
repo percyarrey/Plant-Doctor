@@ -24,6 +24,7 @@ namespace Plant_Doctor
 
         protected override void OnResume()
         {
+
         }
     }
 }

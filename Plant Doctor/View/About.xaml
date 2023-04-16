@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plant_Doctor.View.About">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image Source="loginback.png" 
+                   Aspect="AspectFill"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                   ></Image>
+            <FlexLayout BackgroundColor="Black" Opacity="0.36"/>
+            <FlexLayout JustifyContent="Center">
+                <StackLayout Margin="40,0,34,0">
+                    <Label Text="About" Margin="0,100,20,0" TextColor="WhiteSmoke" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="40"/>
+                    <Frame CornerRadius="8">
+                        <StackLayout>
+                            <Label HorizontalOptions="CenterAndExpand" Text="The Plant Doctor" FontAttributes="Bold" TextColor="Black" FontSize="30"/>
+                            <Label Margin="0,40,0,0" FontSize="16" Text="We are your plant doctor. we help you to know the different types of plants that exist and their diseases. We also help you what diseases might be affecting you plant and how to treat it. We have diagnose many plant fot the pass years. for more information click Know More" />
+                            <Button Clicked="Showalert" Text="Know More" BorderColor="LightCyan" FontAttributes="Bold" BorderWidth="2" Padding="0" Margin="0,30,0,0" TextColor="Red" BackgroundColor="White" FontSize="24"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </FlexLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

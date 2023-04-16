@@ -96,15 +96,10 @@
                 <Setter
 			        Property="TabStripPlacement"
 			        Value="Bottom" />
-                
             </Style>
 
 
         </ResourceDictionary>
-
-
-
-
     </ContentPage.Resources>
 
     <ContentPage.Content>
@@ -114,7 +109,7 @@
                     <BoxView BackgroundColor="White" WidthRequest="30" CornerRadius="30,6,0,0" />
                 </xct:TabView.TabStripBackgroundView>
                 <!--HOME-->
-                <xct:TabViewItem 
+                <xct:TabViewItem  PropertyChanged="Menuhidefxn"
                     Text="HOME" 
                     ControlTemplate="{StaticResource TabItemTemplate}"
                     TextColor="LightGreen"
@@ -127,34 +122,184 @@
                     <xct:TabViewItem.IconSelected>
                         <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Home}"/>
                     </xct:TabViewItem.IconSelected>
-                    <RelativeLayout  BackgroundColor="#85D6D1">
-                        <Image
+                    
+                    <RelativeLayout>
+                        <!--MENU-->
+                        <RelativeLayout x:Name="Menuremove"  BackgroundColor="#85D6D1">
+                            <Image
                            Aspect="AspectFill"
                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
                            Source="homeback.png"
-                         /> 
-                        <FlexLayout BackgroundColor="Black" Opacity="0.45">
-                        </FlexLayout>
-                        <FlexLayout Direction="Row" JustifyContent="Center" AlignItems="Start">
-                            <FlexLayout.Padding>0,40,0,0</FlexLayout.Padding>
-                            <StackLayout WidthRequest="360">
-                                <StackLayout Padding="270,0,0,0" Margin="0,0,38,5">
-                                    <Frame Padding="0,0,0,0" HasShadow="True"  Margin="0,0,0,0" IsClippedToBounds="True" TranslationX="20" TranslationY="8" CornerRadius="22">
-                                        <ImageButton Clicked="Mainsignup" Source="usericon.png" BackgroundColor="LightBlue" HeightRequest="50"  Aspect="Fill"/>
-                                    </Frame>
+                            />
+                            <FlexLayout BackgroundColor="Black" Opacity="0.45">
+                            </FlexLayout>
+                            <FlexLayout Direction="Row" JustifyContent="Center" AlignItems="Start">
+                                <FlexLayout.Padding>0,40,0,0</FlexLayout.Padding>
+                                <StackLayout WidthRequest="360">
+                                    <!--MENU-->
+                                    <FlexLayout JustifyContent="SpaceBetween" Padding="25,0,25,0">
+                                        <StackLayout>
+                                            <Frame  Padding="0.3" HasShadow="True"  Margin="0,0,0,0" BackgroundColor="WhiteSmoke">
+                                                <ImageButton BorderWidth="2" BorderColor="LightGreen" Padding="0,0,0,10" Clicked="Settingfxn" BackgroundColor="Transparent" WidthRequest="40" HeightRequest="40"  Aspect="Fill">
+                                                    <ImageButton.Source>
+                                                        <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Menu}"/>
+                                                    </ImageButton.Source>
+                                                </ImageButton>
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Frame Padding="2" HasShadow="True"  Margin="0,0,0,0" CornerRadius="22">
+                                                <ImageButton CornerRadius="22" BorderWidth="1" BorderColor="#CACACA" Padding="0,0,0,10" Clicked="Mainsignup" BackgroundColor="Transparent" WidthRequest="40" HeightRequest="40"  Aspect="Fill">
+                                                    <ImageButton.Source>
+                                                        <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Account}"/>
+                                                    </ImageButton.Source>
+                                                </ImageButton>
+                                            </Frame>
+                                        </StackLayout>
+                                    </FlexLayout>
+                                    <Image Source="logo.png" HeightRequest="110" Margin="0,30,0,18"/>
+                                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,25" TextColor="White"/>
+                                    <Label Text="Plants fix the world, Let's fix them." TextColor="White" Opacity="0.7" FontSize="30" FontAttributes="None" HorizontalTextAlignment="Center" Margin="10,0,10,50" />
+                                    <Button WidthRequest="260" BorderWidth="2" BorderColor="#CACACA"  Clicked="P_Diagnosticfxn" CornerRadius="10" Margin="0,0,0,30" HorizontalOptions="Center" Text="REQUEST DIAGNOSIS" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+                                    <Button WidthRequest="260" BorderWidth="2" BorderColor="#CACACA" Clicked="Aboutfxn" CornerRadius="10" HorizontalOptions="Center" Text="ABOUT" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
                                 </StackLayout>
-                                <Image Source="logo.png" HeightRequest="110" Margin="0,30,0,18"/>
-                                <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,25" TextColor="White"/>
-                                <Label Text="Plants fix the world, Let's fix them." TextColor="White" Opacity="0.7" FontSize="30" FontAttributes="None" HorizontalTextAlignment="Center" Margin="10,0,10,50" />
-                                <Button WidthRequest="260" BorderWidth="2" BorderColor="#CACACA"  Clicked="P_Diagnosticfxn" CornerRadius="10" Margin="0,0,0,30" HorizontalOptions="Center" Text="REQUEST DIAGNOSIS" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
-                                <Button WidthRequest="260" BorderWidth="2" BorderColor="#CACACA" Clicked="Aboutfxn" CornerRadius="10" HorizontalOptions="Center" Text="ABOUT" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
-                            </StackLayout>
-                        </FlexLayout>
+                            </FlexLayout>
+                            <Button x:Name="Menuhidebtn" Clicked="Menuhidefxn" BackgroundColor="Black" Opacity="0.7" IsVisible="False" IsEnabled="False"
+                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+                        </RelativeLayout>
+                        <!--FLYINOUT-->
+                        <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" TranslationX="-200" Padding="0,0,0,200" x:Name="Menuadd" IsEnabled="False" IsVisible="False" WidthRequest="260" BackgroundColor="White"> 
+                            <RelativeLayout HeightRequest="160" BackgroundColor="White">
+                                <Image Source="Signoutflower.png" Aspect="AspectFill"
+                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+                                <Label  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" 
+                                    BackgroundColor="Black" 
+                                        Opacity="0.4"/>
+                                <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+                                    
+                                        <Label 
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="End"
+                                        Text="Settings" 
+                                        TextColor="White"
+                                        FontAttributes="Bold"
+                                        Margin="20"
+                                        FontSize="30" CharacterSpacing="1"/>
+                                </Grid>
+                                <StackLayout Padding="10">
+                                    <FlexLayout JustifyContent="End">
+                                        <Frame  Padding="0.3" HasShadow="True"  Margin="0,0,0,0" BackgroundColor="WhiteSmoke">
+                                            <ImageButton BorderWidth="2" BorderColor="LightGreen" Padding="0,0,0,10" Clicked="Menuhidefxn" BackgroundColor="Transparent" WidthRequest="40" HeightRequest="40"  Aspect="Fill">
+                                                <ImageButton.Source>
+                                                    <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.MenuLeft}"/>
+                                                </ImageButton.Source>
+                                            </ImageButton>
+                                        </Frame>
+                                    </FlexLayout>
+                                </StackLayout>
+                            </RelativeLayout>
+                            <!--INFORMATION-->
+                            <FlexLayout Padding="10,0,0,0" Direction="Column" JustifyContent="SpaceBetween" BackgroundColor="White">
+                                <!--SIGNOUT-->
+                                <StackLayout>
+                                    <FlexLayout>
+                                        <ImageButton Clicked="Signoutfxn" BackgroundColor="Transparent">
+                                            <ImageButton.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Account}"/>
+                                            </ImageButton.Source>
+                                        </ImageButton>
+                                        <Button Clicked="Signoutfxn" BackgroundColor="Transparent" Text="Sign Out" TextColor="LightBlue" FontSize="22" FontAttributes="Bold"/>
+                                    </FlexLayout>
+                                    <Label Text="General Settings" TextColor="Black" FontSize="22" FontAttributes="Bold"/>
+                                    <BoxView HeightRequest="1" BackgroundColor="Black"/>
+                                </StackLayout>
+                                <!--NOTIFICATION-->
+                                <StackLayout Margin="0,40,0,0">
+                                    <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,0,30,0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Bell}"/> 
+                                            </Image.Source>
+                                        </Image>
+                                        <Label Margin="0,6,0,0" Text="Notification"/>
+                                        <CheckBox></CheckBox>
+                                    </FlexLayout>
+                                </StackLayout>
+                                <!--Language-->
+                                <StackLayout Margin="0,30,0,0">
+                                    <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,0,30,0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.GlobeLight}"/>
+                                            </Image.Source>
+                                        </Image>
+                                        <Label Text="Language" TextColor="Black"/>
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </FlexLayout>
+                                    
+                                </StackLayout>
+                                <!--LOCATIO-->
+                                <StackLayout  Margin="0,30,0,0">
+                                    <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,0,30,0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.GoogleMaps}"/>
+                                            </Image.Source>
+                                        </Image>
+                                        <Label Text="Location" TextColor="Black"/>
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </FlexLayout>
+                                    
+                                </StackLayout>
+                                <!--THEME-->
+                                <StackLayout Margin="0,30,0,0">
+                                    <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,0,30,0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.MoonWaningCrescent}"/>
+                                            </Image.Source>
+                                        </Image>
+                                        <Label Text="Dark theme" TextColor="Black"/>
+                                        <CheckBox Color="Black"></CheckBox>
+                                    </FlexLayout>
+                                </StackLayout>
+                                <!--RATE-->
+                                <StackLayout Margin="0,30,0,0">
+                                    <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,0,30,0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Star}"/>
+                                            </Image.Source>
+                                        </Image>
+                                        <Label Text="Rate Us" TextColor="Black"/>
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </FlexLayout>
+                                    
+                                </StackLayout>
+                            </FlexLayout>
+                        </StackLayout>
+                        
                     </RelativeLayout>
                 </xct:TabViewItem>
                 <!--LEARN MORE-->
-                <xct:TabViewItem 
+                <xct:TabViewItem
                     FontFamily="MyIcon"  
                     Text="LearnMore"
                     TextColor="LightGreen"
@@ -207,6 +352,7 @@
                     <xct:TabViewItem.Icon>
                         <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Leaf}"/>
                     </xct:TabViewItem.Icon>
+                    
                 </xct:TabViewItem>
             </xct:TabView>
         </Grid>

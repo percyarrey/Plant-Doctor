@@ -140,10 +140,13 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\abouticon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Signoutflower.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionPlantDoctorAndroidHideInfoBar="True" XamarinHotReloadGenericExceptionInfoBarPlantDoctorAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadGenericExceptionInfoBarPlantDoctorAndroidHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionPlantDoctorAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

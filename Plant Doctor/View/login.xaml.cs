@@ -34,7 +34,7 @@ namespace Plant_Doctor.View
                         var newname = myquery.fname;
                         newname = "Welcome " + newname +" to the Group One Moblie App";
                         _ = DisplayAlert("Message", newname, "Continue");
-                        App.Current.MainPage = new NavigationPage(new MainPage());
+                        App.Current.MainPage = new NavigationPage(new Dashboard());
                     }
                     else
                     {

@@ -39,7 +39,7 @@ namespace Plant_Doctor
         private void Aboutfxn(object sender, EventArgs e)
         {
 
-            _ = DisplayAlert("Alert", "Page not Avialable", "OK");
+            _ = Navigation.PushAsync(new About());
         }
         private void Mainsignup(object sender, EventArgs e)
         {
@@ -52,6 +52,30 @@ namespace Plant_Doctor
         private void P_diagpagefxn(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new P_Diagnostic());
+        }
+        private async void Settingfxn(object sender, EventArgs e)
+        {   
+            Menuhidebtn.IsEnabled = true;
+            Menuhidebtn.IsVisible = true;
+            Menuadd.IsVisible = true;
+            Menuadd.IsEnabled = true;
+            await Menuadd.TranslateTo(0, 0, 300);
+        }
+        private async void Menuhidefxn(object sender, EventArgs e)
+        {   
+            Menuhidebtn.IsEnabled = false;
+            Menuhidebtn.IsVisible = false;
+            await Menuadd.TranslateTo(-200, 0, 200);
+            Menuadd.IsVisible = false;
+            Menuadd.IsEnabled = false;
+        }
+        private async void Signoutfxn(object sender, EventArgs e)
+        {
+            var result = await DisplayAlert("Warning", "Do you wish to Sign Out", "Yes", "No");
+            if (result)
+            {
+                App.Current.MainPage = new NavigationPage(new Startup());
+            }
         }
     }
 }
