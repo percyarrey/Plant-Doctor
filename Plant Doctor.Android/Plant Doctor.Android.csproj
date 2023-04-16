@@ -69,8 +69,11 @@
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.8.116</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit">
+      <Version>2.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -85,15 +88,13 @@
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plant Doctor\Plant Doctor.csproj">
-      <Project>{9D7AE893-C1AC-407E-B77F-7406FAFA07CC}</Project>
+      <Project>{A507CA40-FD18-4D84-9BCE-B47212A92777}</Project>
       <Name>Plant Doctor</Name>
     </ProjectReference>
   </ItemGroup>
@@ -113,19 +114,7 @@
     <AndroidResource Include="Resources\drawable\homeback.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\login2back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\signupback.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\homeicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\homeicon_adaptive_back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\homeicon_adaptive_fore.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\homeicon.png" />
@@ -148,10 +137,13 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\addicon.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\abouticon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadGenericExceptionInfoBarPlantDoctorAndroidHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionPlantDoctorAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionPlantDoctorAndroidHideInfoBar="True" XamarinHotReloadGenericExceptionInfoBarPlantDoctorAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

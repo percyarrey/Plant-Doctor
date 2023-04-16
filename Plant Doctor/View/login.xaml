@@ -8,14 +8,16 @@
                Aspect="AspectFill"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
-               Source="login2back.png"
+               Source="loginback.png"
              />
+            <FlexLayout BackgroundColor="Black" Opacity="0.45"/>
             <FlexLayout Direction="Row"  JustifyContent="Center" AlignItems="End">
                 <FlexLayout.Padding>0,0,0,80</FlexLayout.Padding>
                 <StackLayout Padding="15,0,15,0" Spacing="0">
-                    <Image  Source="logo.png" HeightRequest="110" />
-                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,75" TextColor="black"/>
-                    <Label Text="Email" FontSize="Title" FontAttributes="Bold" Margin="0,0,0,3" TextColor="White"/>
+                    <Image  Source="logo.png" HeightRequest="110" Margin="0,10,0,0"/>
+                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,8" TextColor="White"/>
+                    <Label Text="Welcome Back" HorizontalTextAlignment="Center" Margin="0,0,0,18" FontAttributes="Bold"  TextColor="White" FontSize="30" Opacity="0.8"/>
+                    <Label Text="Email" FontSize="Title" FontAttributes="Bold"  Margin="0,0,0,3" TextColor="White"/>
                     <Frame Padding="0" Margin="0,0,0,28" IsClippedToBounds="True" CornerRadius="6">
                         <Entry x:Name="email" Placeholder="Enter email address" TextColor="Black" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
                     </Frame>

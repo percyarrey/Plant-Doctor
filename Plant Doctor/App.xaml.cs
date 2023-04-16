@@ -2,7 +2,7 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+[assembly: ExportFont("bootstrap-icons.ttf", Alias = "Bootstrap")]
 namespace Plant_Doctor
 {
     public partial class App : Application
@@ -10,7 +10,7 @@ namespace Plant_Doctor
         public App()
         {
             InitializeComponent();
-            MainPage =new NavigationPage(new MainPage());
+            MainPage =new NavigationPage(new Dashboard());
         }
         protected override void OnStart()
         {

@@ -8,13 +8,14 @@
                Aspect="AspectFill"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
-               Source="signupback.png"
+               Source="loginback.png"
              />
+            <FlexLayout BackgroundColor="Black" Opacity="0.45"/>
             <FlexLayout Direction="Row"  JustifyContent="Center" AlignItems="End">
                 <FlexLayout.Padding>0,0,0,25</FlexLayout.Padding>
                 <StackLayout Padding="15,0,15,0"  Spacing="0">
                     <Image  Source="logo.png" HeightRequest="80" HorizontalOptions="End" TranslationY="16"/>
-                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="48" FontAttributes="Bold" Margin="0,0,0,12" TextColor="Black"/>
+                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="48" FontAttributes="Bold" Margin="0,0,0,12" TextColor="White"/>
                     <!--Fname-->
                     <Label Text="First Name" FontSize="Title" FontAttributes="Bold" Margin="0,0,0,3" TextColor="White"/>
                     <Frame Padding="0" Margin="0,0,0,10" IsClippedToBounds="True" CornerRadius="6">

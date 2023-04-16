@@ -10,13 +10,14 @@
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
                Source="loginback.png"
              />
+            <FlexLayout BackgroundColor="Black" Opacity="0.45"/>
             <FlexLayout Direction="Row"  JustifyContent="Center" AlignItems="End">
-                <FlexLayout.Padding>0,0,0,170</FlexLayout.Padding>
+                <FlexLayout.Padding>0,0,0,140</FlexLayout.Padding>
                 <StackLayout Padding="15,0,15,0"  Spacing="0">
-                    <Image Source="logo.png" HeightRequest="120" Margin="0,0,0,20"/>
-                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,10" TextColor="Black"/>
-                    <Label Text="   Plants fix the world, Let's fix them." TextColor="Black" Opacity="0.4" FontSize="30" FontAttributes="None" HorizontalTextAlignment="Center" Margin="10,0,10,60" />
-                    <FlexLayout JustifyContent="SpaceAround" Padding="25,0,25,0">
+                    <Image Source="logo.png" HeightRequest="120" Margin="0,0,0,60"/>
+                    <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,10" TextColor="White"/>
+                    <Label Text="   Plants fix the world, Let's fix them." TextColor="White" Opacity="0.7" FontSize="30" FontAttributes="None" HorizontalTextAlignment="Center" Margin="10,0,10,90" />
+                    <FlexLayout JustifyContent="SpaceBetween" Padding="15,0,15,0">
                         <Button BorderWidth="1" WidthRequest="130" BorderColor="#CACACA"  Clicked="Startsignupfxn" CornerRadius="10" Margin="0,0,0,30" HorizontalOptions="Center" Text="Signup" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
                         <Button BorderWidth="1" WidthRequest="130" BorderColor="#CACACA"  Clicked="Startloginfxn" CornerRadius="10" Margin="0,0,0,30" HorizontalOptions="Center" Text="Login" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
                     </FlexLayout>

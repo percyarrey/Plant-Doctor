@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plant Doctor.Android", "Pla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plant Doctor.iOS", "Plant Doctor.iOS\Plant Doctor.iOS.csproj", "{ECBD11C7-1663-4FE3-8108-37E7A6FAEB7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plant Doctor", "Plant Doctor\Plant Doctor.csproj", "{A507CA40-FD18-4D84-9BCE-B47212A92777}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plant Doctor", "Plant Doctor\Plant Doctor.csproj", "{A507CA40-FD18-4D84-9BCE-B47212A92777}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

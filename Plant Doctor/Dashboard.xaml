@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             xmlns:localfont="clr-namespace:TabViewApp.AppFonts"
+             xmlns:homepage="clr-namespace:Plant_Doctor.View"
+             x:Class="Plant_Doctor.Dashboard">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate
+		        x:Key="TabItemTemplate">
+                <Grid
+			        RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+				        Grid.Row="0"
+				        VerticalOptions="Center"
+				        HorizontalOptions="Center"
+				        WidthRequest="30"
+				        HeightRequest="30"
+                        Margin="0"
+				        Source="{TemplateBinding CurrentIcon}" />
+                    <Label
+				        Grid.Row="1"
+				        HorizontalOptions="Center"
+				        FontSize="{TemplateBinding FontSize}"
+				        Text="{TemplateBinding Text}"
+				        TextColor="{TemplateBinding CurrentTextColor}"
+                        Margin="0,0,0,1"/>
+                </Grid>
+            </ControlTemplate>
+
+            <ControlTemplate
+                x:Key="FabTabItemTemplate">
+                <Grid>
+                    <ImageButton
+                        InputTransparent="True"
+                        Source="{TemplateBinding CurrentIcon}"
+                        Padding="5"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"
+                        BorderColor="LightGray"
+                        BorderWidth="2"
+                        HeightRequest="70"
+                        WidthRequest="70"
+                        Margin="0,0,0,0">
+                        <ImageButton.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Int32">
+                                <On Platform="iOS" Value="30"/>
+                                <On Platform="Android" Value="60"/>
+                                <On Platform="UWP" Value="36"/>
+                            </OnPlatform>
+                        </ImageButton.CornerRadius>
+                        <ImageButton.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android, iOS, UWP">True</On>
+                                <On Platform="macOS">False</On>
+                            </OnPlatform>
+                        </ImageButton.IsVisible>
+                    </ImageButton>
+                    <BoxView  
+                        InputTransparent="True"
+                        HorizontalOptions="Center"
+                        CornerRadius="30"
+                        BackgroundColor="#FF0000"
+                        HeightRequest="60"
+                        WidthRequest="60"
+                        Margin="6">
+                        <BoxView.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android, iOS, UWP">False</On>
+                                <On Platform="macOS">True</On>
+                            </OnPlatform>
+                        </BoxView.IsVisible>
+                    </BoxView>
+                </Grid>
+            </ControlTemplate>
+
+            <Style
+		        x:Key="CustomTabStyle"
+		        TargetType="xct:TabView">
+                <Setter
+			        Property="IsTabTransitionEnabled"
+			        Value="True" />
+                <Setter
+			        Property="TabStripHeight"
+			        Value="48" />
+                <Setter
+			        Property="TabContentBackgroundColor"
+			        Value="#C2C3C3" />
+                <Setter
+			        Property="TabStripPlacement"
+			        Value="Bottom" />
+                
+            </Style>
+
+
+        </ResourceDictionary>
+
+
+
+
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <xct:TabView Style="{StaticResource CustomTabStyle}">
+                <xct:TabView.TabStripBackgroundView>
+                    <BoxView BackgroundColor="White" WidthRequest="30" CornerRadius="30,6,0,0" />
+                </xct:TabView.TabStripBackgroundView>
+                <!--HOME-->
+                <xct:TabViewItem 
+                    Text="HOME" 
+                    ControlTemplate="{StaticResource TabItemTemplate}"
+                    TextColor="LightGreen"
+                    TextColorSelected="Green"
+                    >
+                    <xct:TabViewItem.Icon>
+                        <FontImageSource Color="LightGreen"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.HomeOutline}"/>
+                    </xct:TabViewItem.Icon>
+
+                    <xct:TabViewItem.IconSelected>
+                        <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Home}"/>
+                    </xct:TabViewItem.IconSelected>
+                    <RelativeLayout  BackgroundColor="#85D6D1">
+                        <Image
+                           Aspect="AspectFill"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                           Source="homeback.png"
+                         /> 
+                        <FlexLayout BackgroundColor="Black" Opacity="0.45">
+                        </FlexLayout>
+                        <FlexLayout Direction="Row" JustifyContent="Center" AlignItems="Start">
+                            <FlexLayout.Padding>0,40,0,0</FlexLayout.Padding>
+                            <StackLayout WidthRequest="360">
+                                <StackLayout Padding="270,0,0,0" Margin="0,0,38,5">
+                                    <Frame Padding="0,0,0,0" HasShadow="True"  Margin="0,0,0,0" IsClippedToBounds="True" TranslationX="20" TranslationY="8" CornerRadius="22">
+                                        <ImageButton Clicked="Mainsignup" Source="usericon.png" BackgroundColor="LightBlue" HeightRequest="50"  Aspect="Fill"/>
+                                    </Frame>
+                                </StackLayout>
+                                <Image Source="logo.png" HeightRequest="110" Margin="0,30,0,18"/>
+                                <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,25" TextColor="White"/>
+                                <Label Text="Plants fix the world, Let's fix them." TextColor="White" Opacity="0.7" FontSize="30" FontAttributes="None" HorizontalTextAlignment="Center" Margin="10,0,10,50" />
+                                <Button WidthRequest="260" BorderWidth="2" BorderColor="#CACACA"  Clicked="P_Diagnosticfxn" CornerRadius="10" Margin="0,0,0,30" HorizontalOptions="Center" Text="REQUEST DIAGNOSIS" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+                                <Button WidthRequest="260" BorderWidth="2" BorderColor="#CACACA" Clicked="Aboutfxn" CornerRadius="10" HorizontalOptions="Center" Text="ABOUT" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+                            </StackLayout>
+                        </FlexLayout>
+                    </RelativeLayout>
+                </xct:TabViewItem>
+                <!--LEARN MORE-->
+                <xct:TabViewItem 
+                    FontFamily="MyIcon"  
+                    Text="LearnMore"
+                    TextColor="LightGreen"
+                    ControlTemplate="{StaticResource TabItemTemplate}"
+                    FontSize="10">
+                    <xct:TabViewItem.Icon>
+                        <FontImageSource Color="LightGreen"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.MagnifyPlusOutline}"/>
+                    </xct:TabViewItem.Icon>
+                    <xct:TabViewItem.IconSelected>
+                        <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.MagnifyPlus}"/>
+                    </xct:TabViewItem.IconSelected>
+                    <xct:TabViewItem.TextColorSelected>
+                        Green
+                    </xct:TabViewItem.TextColorSelected>
+                    <Grid 
+                            BackgroundColor="Blue">
+                        <Label 
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="TabContent2" />
+                    </Grid>
+                </xct:TabViewItem>
+                <!--Account-->
+                <xct:TabViewItem 
+                    Text="Account" 
+                    ControlTemplate="{StaticResource TabItemTemplate}"
+                    TextColor="LightGreen"
+                    TextColorSelected="Green">
+                    <xct:TabViewItem.Icon>
+                        <FontImageSource Color="LightGreen"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.AccountEditOutline}"/>
+                    </xct:TabViewItem.Icon>
+
+                    <xct:TabViewItem.IconSelected>
+                        <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.AccountEdit}"/>
+                    </xct:TabViewItem.IconSelected>
+
+                    <Grid 
+                            BackgroundColor="Green">
+                        <Label
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Text="Account Page Not Available" />
+                    </Grid>
+                </xct:TabViewItem>
+                <xct:TabViewItem
+                    TabTapped="P_diagpagefxn"
+                    ControlTemplate="{StaticResource FabTabItemTemplate}"
+                    TextColor="#979797"
+                    TextColorSelected="Black">
+                    <xct:TabViewItem.Icon>
+                        <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Leaf}"/>
+                    </xct:TabViewItem.Icon>
+                </xct:TabViewItem>
+            </xct:TabView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

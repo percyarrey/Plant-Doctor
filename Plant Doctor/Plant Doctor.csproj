@@ -3,12 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <UserSecretsId>b33d2a71-c662-4968-9de1-dfc4b1af2fe3</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="AppFonts\materialicons.ttf" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
@@ -21,6 +26,7 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Data\" />
+    <Folder Include="fonts\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Dashboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
