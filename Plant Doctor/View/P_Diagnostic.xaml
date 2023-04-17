@@ -1,58 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localfont="clr-namespace:TabViewApp.AppFonts"
              x:Class="Plant_Doctor.View.P_Diagnostic">
     <ContentPage.Content>
         <RelativeLayout>
             <Label
-               BackgroundColor="#85D6D1"
+               BackgroundColor="GhostWhite"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
              />
             <FlexLayout Direction="Row">
                 <FlexLayout.Padding>0,0,0,0</FlexLayout.Padding>
-                <StackLayout Padding="15,0,15,0">
-                    <Label  Margin="0,15,0,0" Text="Enter as much information as possible" TextColor="White" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center"/>
-                    <BoxView BackgroundColor="White" HeightRequest="1"></BoxView>
-                    <ScrollView VerticalScrollBarVisibility="Never">
-                        <StackLayout>
-                            <Label Margin="0,35,0,0" Text="Plant Name" TextColor="White" FontAttributes="Bold" FontSize="Large"/>
-                            <Label Text="(e.g Common name, Scientific, Variety)" TextColor="White" FontAttributes="Bold" FontSize="Default"/>
-                            <Frame Padding="0" Margin="0,0,0,0" IsClippedToBounds="True" CornerRadius="6">
-                                <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
-                            </Frame>
-                            <Label  Margin="0,35,0,0" Text="Primary Symtoms" TextColor="White" FontAttributes="Bold" FontSize="Large"/>
-                            <Label Text="(e.g Yellowing, Wilting, Stunting, Death, Leaf spot)" TextColor="White" FontAttributes="Bold" FontSize="Default"/>
-                            <Frame Padding="0" IsClippedToBounds="True" CornerRadius="6">
-                                <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
-                            </Frame>
-                            <Label  Margin="0,35,0,0" Text="Plant Setting" TextColor="White" FontAttributes="Bold" FontSize="Large"/>
-                            <Label Text="(e.g Indoor, Landscape, Garden, Nursery, Farm, Forest)" TextColor="White" FontAttributes="Bold" FontSize="Default"/>
-                            <Frame Padding="0" IsClippedToBounds="True" CornerRadius="6">
-                                <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
-                            </Frame>
-                            <Label  Margin="0,35,0,0" Text="Geographical Location" TextColor="White" FontAttributes="Bold" FontSize="Large"/>
-                            <Label Text="(e.g Common name, Scientific, Variety)" TextColor="White" FontAttributes="Bold" FontSize="Default"/>
-                            <Frame Padding="0"  Margin="0,0,0,10" IsClippedToBounds="True" CornerRadius="6">
-                                <Entry HorizontalOptions="FillAndExpand"  BackgroundColor="White"/>
-                            </Frame>
-                            <BoxView BackgroundColor="White" HeightRequest="1"></BoxView>
-                            <Label  Margin="0,10,0,0" Text="Camera" TextColor="White" FontAttributes="Bold" FontSize="Large"/>
-                            <StackLayout Padding="50,0,40,0" x:Name="imgcontrol">
+                <StackLayout>
+                    <FlexLayout Margin="0,20,0,0" JustifyContent="End" Padding="25,0,25,0">
+                    <StackLayout>
+                        <Frame Padding="2" HasShadow="True"  Margin="0,0,0,0" CornerRadius="22">
+                            <ImageButton CornerRadius="22" BorderWidth="1" BorderColor="#CACACA" Padding="0,0,0,10" Clicked="Mainsignup" BackgroundColor="Transparent" WidthRequest="40" HeightRequest="40"  Aspect="Fill">
+                                <ImageButton.Source>
+                                    <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Account}"/>
+                                </ImageButton.Source>
+                            </ImageButton>
+                        </Frame>
+                    </StackLayout>
+                </FlexLayout>
+                    <Label Text="SEARCH DIAGNOSIS" FontAttributes="Bold" FontSize="20" TextColor="#FF6108"/>
+                    
+                    
+                    <!--Search Diagnosis-->
+                    <Frame CornerRadius="30" x:Name="mytranlate" Padding="0" BackgroundColor="CadetBlue">
+                        <StackLayout Padding="15,0,15,0">
+                            <Label  Margin="0,15,0,0" Text="Enter as much information as possible" TextColor="Black" FontAttributes="Bold" FontSize="17" HorizontalTextAlignment="Center"/>
+                            <BoxView BackgroundColor="LightGray" HeightRequest="1"></BoxView>
+                            <ScrollView Scrolled="Scrollfxn" VerticalScrollBarVisibility="Never">
+                                <StackLayout>
+                                    <Label Margin="0,35,0,0" Text="Plant Name" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                                    <Label Text="(e.g Common name, Scientific, Variety)" TextColor="Black" FontAttributes="Bold" FontSize="Default"/>
+                                    <Frame Padding="0" Margin="0,0,0,0" IsClippedToBounds="True" CornerRadius="6">
+                                        <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                                    </Frame>
+                                    <Label  Margin="0,35,0,0" Text="Primary Symtoms" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                                    <Label Text="(e.g Yellowing, Wilting, Stunting, Death, Leaf spot)" TextColor="Black" FontAttributes="Bold" FontSize="Default"/>
+                                    <Frame Padding="0" IsClippedToBounds="True" CornerRadius="6">
+                                        <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                                    </Frame>
+                                    <Label  Margin="0,35,0,0" Text="Plant Setting" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                                    <Label Text="(e.g Indoor, Landscape, Garden, Nursery, Farm, Forest)" TextColor="Black" FontAttributes="Bold" FontSize="Default"/>
+                                    <Frame Padding="0" IsClippedToBounds="True" CornerRadius="6">
+                                        <Entry HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                                    </Frame>
+                                    <Label  Margin="0,35,0,0" Text="Geographical Location" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                                    <Label Text="(e.g Common name, Scientific, Variety)" TextColor="Black" FontAttributes="Bold" FontSize="Default"/>
+                                    <Frame Padding="0"  Margin="0,0,0,10" IsClippedToBounds="True" CornerRadius="6">
+                                        <Entry HorizontalOptions="FillAndExpand"  BackgroundColor="White"/>
+                                    </Frame>
+                                    <BoxView BackgroundColor="Black" HeightRequest="1"></BoxView>
+                                    <Label  Margin="0,10,0,0" Text="Camera" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                                    <StackLayout Padding="50,0,40,0" x:Name="imgcontrol">
 
-                            </StackLayout>
-                            <FlexLayout JustifyContent="End" AlignItems="Center" Margin="0,0,0,100">
-                                <Frame Padding="10,10,30,10" TranslationX="28" CornerRadius="20">
-                                    <Label Text="Add an image of the plant" FontAttributes="None" TextColor="Black" BackgroundColor="Transparent" FontSize="Small"/>
-                                </Frame>
-                                <ImageButton Clicked="P_doactionfxn" BackgroundColor="White" HeightRequest="80" CornerRadius="100" Source="addicon.jpg" />
+                                    </StackLayout>
+                                    <FlexLayout JustifyContent="End" AlignItems="Center" Margin="0,0,0,100">
+                                        <Frame Padding="10,10,30,10" TranslationX="28" CornerRadius="20">
+                                            <Label Text="Add an image of the plant" FontAttributes="None" TextColor="Black" BackgroundColor="Transparent" FontSize="Small"/>
+                                        </Frame>
+                                        <ImageButton Clicked="P_doactionfxn" BackgroundColor="Black" HeightRequest="80" CornerRadius="100" Source="addicon.jpg" />
+                                    </FlexLayout>
+                                </StackLayout>
+                            </ScrollView>
+                            <FlexLayout JustifyContent="SpaceBetween" Margin="0,0,0,30">
+                                <Button BorderWidth="1" WidthRequest="130" BorderColor="#CACACA"  Clicked="P_backfxn" CornerRadius="10" HorizontalOptions="Center" Text="Back" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+                                <Button BorderWidth="1" WidthRequest="130" BorderColor="#CACACA" Clicked="P_subfxn" CornerRadius="10" Margin="0,0,0,0" HorizontalOptions="Center" Text="Submit" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
                             </FlexLayout>
                         </StackLayout>
-                    </ScrollView>
-                    <FlexLayout JustifyContent="SpaceBetween" Margin="0,0,0,30">
-                        <Button BorderWidth="1" WidthRequest="130" BorderColor="#CACACA"  Clicked="P_backfxn" CornerRadius="10" HorizontalOptions="Center" Text="Back" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
-                        <Button BorderWidth="1" WidthRequest="130" BorderColor="#CACACA" Clicked="P_subfxn" CornerRadius="10" Margin="0,0,0,0" HorizontalOptions="Center" Text="Submit" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
-                    </FlexLayout>
+                    </Frame>
                 </StackLayout>
             </FlexLayout>
             <RelativeLayout x:Name="Toplayout" IsEnabled="False" IsVisible="False">
@@ -68,7 +88,7 @@
                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                    RelativeLayout.HeightConstraint="200"
                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Constant=260}">
-                    <Frame x:Name="Framelayout" BackgroundColor="White" CornerRadius="15" HeightRequest="150">
+                    <Frame x:Name="Framelayout" BackgroundColor="Black" CornerRadius="15" HeightRequest="150">
                         <FlexLayout AlignItems="Center" JustifyContent="SpaceAround">
                             <StackLayout Padding="0" Margin="10">
                                 <ImageButton Clicked="P_capfxn" HeightRequest="60" VerticalOptions="CenterAndExpand" BackgroundColor="WhiteSmoke" Padding="3" CornerRadius="15"  Source="cameraicon.png" />

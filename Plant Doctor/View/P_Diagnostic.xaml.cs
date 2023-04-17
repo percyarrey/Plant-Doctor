@@ -80,6 +80,10 @@ namespace Plant_Doctor.View
             
 
         }
+        private void Mainsignup(object sender, EventArgs e)
+        {
+            _ = Navigation.PushModalAsync(new Startup());
+        }
         private async void Uploadimg()
         {
             if (MediaPicker.IsCaptureSupported)
@@ -153,6 +157,10 @@ namespace Plant_Doctor.View
             {
                 imgcontrol.Children.Remove(stacklay);
             };
+        }
+        private void Scrollfxn(object sender, EventArgs e)
+        {
+            _ = Navigation.PushModalAsync(new Startup());
         }
     }
 }

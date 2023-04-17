@@ -226,7 +226,7 @@
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Bell}"/> 
                                             </Image.Source>
                                         </Image>
-                                        <Label Margin="0,6,0,0" Text="Notification"/>
+                                        <Label Margin="0,6,0,0" TextColor="Black" Text="Notification"/>
                                         <CheckBox></CheckBox>
                                     </FlexLayout>
                                 </StackLayout>
