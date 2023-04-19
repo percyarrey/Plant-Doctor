@@ -39,7 +39,7 @@ namespace Plant_Doctor
         private void Aboutfxn(object sender, EventArgs e)
         {
 
-            _ = Navigation.PushAsync(new About());
+            _ = Navigation.PushModalAsync(new NavigationPage(new About()));
         }
         private void Mainsignup(object sender, EventArgs e)
         {
@@ -71,11 +71,27 @@ namespace Plant_Doctor
         }
         private async void Signoutfxn(object sender, EventArgs e)
         {
-            var result = await DisplayAlert("Warning", "Do you wish to Sign Out", "Yes", "No");
-            if (result)
+
+            var dppath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dppath);
+            if (db.GetTableInfo("reguserdata").Count <= 0)
             {
-                App.Current.MainPage = new NavigationPage(new Startup());
+                var newresult = await DisplayAlert("Hmmmmmmmmmm", "How do you want to Sign Down when you have not Sign Up", "SignUp", "Cancel");
+                if (newresult)
+                {
+                    _ = Navigation.PushModalAsync(new Startup());
+                }
             }
+            else
+            {
+                var result = await DisplayAlert("Warning", "Do you wish to Sign Out", "Yes", "No");
+                if (result)
+                {
+                    App.Current.MainPage = new NavigationPage(new Startup());
+                }
+            }
+            
         }
+        
     }
 }

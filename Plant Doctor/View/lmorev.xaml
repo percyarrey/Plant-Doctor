@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localfont="clr-namespace:TabViewApp.AppFonts"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Plant_Doctor.View.lmorev">
+  <ContentView.Content>
+      <StackLayout Padding="20,0,20,0" BackgroundColor="White">
+            <FlexLayout Margin="0,20,0,0" JustifyContent="End" Padding="25,0,25,0">
+                <StackLayout>
+                    <Frame Padding="2" HasShadow="True"  Margin="0,0,0,0" CornerRadius="22">
+                        <ImageButton CornerRadius="22" BorderWidth="1" BorderColor="#CACACA" Padding="0,0,0,10" Clicked="Mainsignup" BackgroundColor="Transparent" WidthRequest="40" HeightRequest="40"  Aspect="Fill">
+                            <ImageButton.Source>
+                                <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Account}"/>
+                            </ImageButton.Source>
+                        </ImageButton>
+                    </Frame>
+                </StackLayout>
+            </FlexLayout>
+            <Image Source="img1.png"/>
+            <Frame CornerRadius="30" Padding="1">
+                <FlexLayout JustifyContent="SpaceBetween">
+                    <Button x:Name="Seasonbtn" Clicked="Seasonfxn" Text="Season" CornerRadius="30" BackgroundColor="LightBlue" Padding="0" Margin="0"></Button>
+                    <Button x:Name="Plantbtn" Clicked="Plantfxn" Text="Plant" CornerRadius="30" BackgroundColor="Transparent" Padding="0" Margin="0"></Button>
+                    <Button x:Name="Picbtn" Clicked="Picfxn" Text="Pictures" CornerRadius="30" BackgroundColor="Transparent" Padding="0" Margin="0"></Button>
+                </FlexLayout>
+            </Frame>
+            <RelativeLayout>
+                <!--SEASON-->
+                <ScrollView x:Name="Season" VerticalScrollBarVisibility="Never" HeightRequest="455">
+                    <Grid Margin="0,16,0,0" RowSpacing="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="*"/>
+                            <RowDefinition  Height="*"/>
+                            <RowDefinition  Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <RelativeLayout Grid.Row="0" Grid.Column="0">
+                            <ImageButton x:Name="s_img1" Clicked="img1fxn" HeightRequest="180" BackgroundColor="Transparent" Source="img2" ScaleY="1.1" TranslationY="10"/>
+                            <Label Margin="40,110,0,0" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Winter" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="0" Grid.Column="1">
+                            <ImageButton x:Name="s_img2"  Clicked="img2fxn"  BackgroundColor="Transparent" Source="img3"  ScaleY="1.1" TranslationY="40" />
+                            <Label Margin="25,110,0,0" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Summer" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="1" Grid.Column="0">
+                            <ImageButton x:Name="s_img3"  Clicked="img3fxn"  HeightRequest="200" Aspect="AspectFill" BackgroundColor="Transparent" Source="img5" TranslationY="-15"/>
+                            <Label Margin="50,130,0,0" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Rainy" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="1" Grid.Column="1">
+                            <ImageButton x:Name="s_img4"  Clicked="img4fxn"  BackgroundColor="Transparent"  Source="img4" TranslationY="30" />
+                            <Label Margin="25,110,0,0"  TranslationY="30" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Autumn" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="2" Grid.ColumnSpan="2">
+                            <ImageButton x:Name="s_img5"  Clicked="img5fxn"  Margin="0,0,0,40" BackgroundColor="Transparent"  Source="img6" Aspect="AspectFill"/>
+                            <Label Margin="40,50,0,0" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Spring" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                    </Grid>
+                </ScrollView>
+                <!--PLANTS-->
+                <ScrollView IsVisible="False" x:Name="Plant" VerticalScrollBarVisibility="Never" HeightRequest="440">
+                    <Grid Margin="0,16,0,0" RowSpacing="10" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="140"/>
+                            <RowDefinition  Height="140"/>
+                            <RowDefinition  Height="200"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <RelativeLayout Grid.Row="0" Grid.Column="0">
+                            <ImageButton x:Name="Plant4" TranslationX="4" ScaleX="1" BackgroundColor="Transparent" Source="plant4"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="0" Grid.Column="1">
+                            <ImageButton  x:Name="Plant5" TranslationX="-16" ScaleX="1.1" BackgroundColor="Transparent" Source="plant5"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="1" Grid.Column="0">
+                            <ImageButton  x:Name="Plant3" BackgroundColor="Transparent" Source="plant3" ScaleY="1.3" TranslationY="16"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="1" Grid.Column="1">
+                            <ImageButton x:Name="Plant2" ScaleX="1.2" ScaleY="1.6" TranslationX="16" TranslationY="43" BackgroundColor="Transparent" Source="plant2"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="2" Grid.Column="0">
+                            <ImageButton  x:Name="Plant1" BackgroundColor="Transparent"  Source="plant1" TranslationY="-6" ScaleY="0.9"  Aspect="AspectFill"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="2" Grid.Column="1">
+                            <Button Text="View More >>" TranslationY="90" TranslationX="20" BackgroundColor="WhiteSmoke" CornerRadius="20"></Button>
+                        </RelativeLayout>
+                    </Grid>
+                </ScrollView>
+                <!--PICTURES-->
+                <ScrollView IsVisible="False" x:Name="Pic" VerticalScrollBarVisibility="Never" HeightRequest="455">
+                    <StackLayout Margin="0,10,0,0">
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Frame Padding="0"  WidthRequest="170" BackgroundColor="Transparent">
+                                <Image Source="img2" />
+                            </Frame>
+                            <Label Text="Image One" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="20"></Label>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Frame Padding="0" WidthRequest="170" BackgroundColor="Transparent">
+                                <Image Source="plant1" />
+                            </Frame>
+                            <Label Text="Image two" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="20"></Label>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Frame Padding="0" WidthRequest="170" BackgroundColor="Transparent">
+                                <Image Source="img3" />
+                            </Frame>
+                            <Label Text="Image Three" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="20"></Label>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Frame Padding="0"  WidthRequest="160" BackgroundColor="Transparent">
+                                <Image Source="plant3" />
+                            </Frame>
+                            <Label Text="Image five" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="20"></Label>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" Margin="0,0,0,50">
+                            <Frame Padding="0"  WidthRequest="170" BackgroundColor="Transparent">
+                                <Image Source="img4" />
+                            </Frame>
+                            <Label Text="Image Six" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="20"></Label>
+                        </FlexLayout>
+                    </StackLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

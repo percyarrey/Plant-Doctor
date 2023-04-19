@@ -22,6 +22,9 @@ namespace Plant_Doctor.View
 		{
 			DisplayAlert("Alert","Page is not Avialable","OK");
 		}
-
+        private void Backfxn(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
     }
 }

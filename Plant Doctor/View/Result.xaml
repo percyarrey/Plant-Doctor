@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plant_Doctor.View.Result">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Results" HorizontalTextAlignment="Center" Margin="0,20,0,0" TextColor="LightGreen" FontAttributes="Bold" FontSize="46"></Label>
+                <ScrollView x:Name="Season" VerticalScrollBarVisibility="Never">
+                    <Grid Margin="0,16,0,0" RowSpacing="1" ColumnSpacing="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="200"/>
+                            <RowDefinition  Height="200"/>
+                            <RowDefinition  Height="200"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <RelativeLayout Grid.Row="0" Grid.Column="0">
+                            <ImageButton x:Name="s_img1" HeightRequest="180" BackgroundColor="Transparent" Aspect="AspectFit"
+                                         Source="img2" ScaleY="1.2" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+                            <Label Margin="40,110,0,0" TextColor="Black" FontAttributes="Bold" FontSize="26" Text="view more" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="0" Grid.Column="1">
+                            <ImageButton x:Name="s_img2" BackgroundColor="Transparent" Source="img3"  Aspect="AspectFit"
+                                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+                            <Label Margin="25,110,0,0" TextColor="Black" FontAttributes="Bold" FontSize="26"  Text="view more" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="1" Grid.Column="0">
+                            <ImageButton x:Name="s_img3" BackgroundColor="Transparent" Source="img5"  Aspect="AspectFit"
+                                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+                            <Label Margin="50,130,0,0" TextColor="Black" FontAttributes="Bold" FontSize="26"  Text="view more" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="1" Grid.Column="1">
+                            <ImageButton x:Name="s_img4"  BackgroundColor="Transparent"  Source="img4" TranslationY="6" Aspect="AspectFit"
+                                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+                            <Label Margin="25,110,0,0"  TranslationY="30" TextColor="Black" FontAttributes="Bold" FontSize="26"  Text="view more" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="2" Grid.Column="0">
+                            <ImageButton x:Name="s_img5" Margin="0,0,0,40" ScaleY="2" BackgroundColor="Transparent"  Source="img6"  Aspect="AspectFit"
+                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+                            <Label Margin="40,50,0,0" TextColor="Black" FontAttributes="Bold" FontSize="26"  Text="view more" HorizontalTextAlignment="Center"/>
+                        </RelativeLayout>
+                        <RelativeLayout Grid.Row="2" Grid.Column="1" Padding="0,0,0,00">
+                            <FlexLayout JustifyContent="End" AlignItems="End">
+                                <Button Text="View more >>" BackgroundColor="LightGreen" CornerRadius="22"/>
+                            </FlexLayout>
+                        </RelativeLayout>
+                    </Grid>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

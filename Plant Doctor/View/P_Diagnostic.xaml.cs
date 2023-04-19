@@ -21,13 +21,23 @@ namespace Plant_Doctor.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class P_Diagnostic : ContentPage
     {
+        private bool isScrolling = false;
         public P_Diagnostic()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);
             DisplayAlert("Alert", "Scroll down to Upload an image", "OK");
-            
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                
+                if (isScrolling)
+                {
+                    isScrolling = false;
+                }
+                return true;
+            });
+
         }
 
         private void P_backfxn(object sender, EventArgs e)
@@ -59,7 +69,7 @@ namespace Plant_Doctor.View
             Toplayout.IsVisible = true;
             Toplayout.IsEnabled = true;
             Framelayout.Scale = 0;
-            await Framelayout.ScaleTo(1,500);
+            await Framelayout.ScaleTo(1,300);
         }
         private async void P_uploadfxn(object sender, EventArgs e)
         {
@@ -146,9 +156,11 @@ namespace Plant_Doctor.View
             var flexLayout = new FlexLayout { Direction=FlexDirection.Row,JustifyContent=FlexJustify.SpaceBetween, AlignItems=FlexAlignItems.Center,Padding = new Thickness(10)};
             var imgbtn = new ImageButton { Source = "deleteicon.png", HeightRequest = 35 };
             var frame = new Frame { Padding = 4, HasShadow = true,  Margin = 0, IsClippedToBounds =true,CornerRadius =5 };
+            var imgframe = new Frame { HasShadow = true, Margin = 0, IsClippedToBounds = true, CornerRadius = 8 };
             var boxview = new BoxView {BackgroundColor=Color.White,HeightRequest=1,ScaleX=2 };
             frame.Content = imgbtn;
-            flexLayout.Children.Add(Myimg);
+            imgframe.Content = Myimg;
+            flexLayout.Children.Add(imgframe);
             flexLayout.Children.Add(frame);
             stacklay.Children.Add(flexLayout);
             stacklay.Children.Add(boxview);
@@ -160,7 +172,25 @@ namespace Plant_Doctor.View
         }
         private void Scrollfxn(object sender, EventArgs e)
         {
-            _ = Navigation.PushModalAsync(new Startup());
+
+            if (!isScrolling)
+            {
+                if (Myscroller.ScrollY ==0)
+                {
+                    isScrolling = true;
+                    Hideonscroll.IsVisible = true;
+                }
+                else if(Myscroller.ScrollY!=0)
+                {
+                    isScrolling = true;
+                    Hideonscroll.IsVisible = false;
+                }
+            }
+            isScrolling = true;
+        }
+        private void Resultfxn(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new NavigationPage(new Result()));
         }
     }
 }

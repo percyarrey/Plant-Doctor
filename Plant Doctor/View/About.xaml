@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localfont="clr-namespace:TabViewApp.AppFonts"
              x:Class="Plant_Doctor.View.About">
     <ContentPage.Content>
         <RelativeLayout>
@@ -10,6 +11,15 @@
                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
                    ></Image>
             <FlexLayout BackgroundColor="Black" Opacity="0.36"/>
+            <FlexLayout Margin="0,20,0,0" JustifyContent="Start" Padding="25,0,25,0">
+                <StackLayout>
+                    <ImageButton Clicked="Backfxn">
+                        <ImageButton.Source>
+                            <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowLeft}"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                </StackLayout>
+            </FlexLayout>
             <FlexLayout JustifyContent="Center">
                 <StackLayout Margin="40,0,34,0">
                     <Label Text="About" Margin="0,100,20,0" TextColor="WhiteSmoke" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="40"/>

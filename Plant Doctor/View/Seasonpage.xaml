@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localfont="clr-namespace:TabViewApp.AppFonts"
+             x:Class="Plant_Doctor.View.Seasonpage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="0,10,0,0">
+                
+                <RelativeLayout Padding="10,0,0,0" HeightRequest="260">
+                    <Image
+                        
+                        x:Name="Headimg"
+                        Source="img1"
+                        Aspect="Fill"
+                       BackgroundColor="GhostWhite"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+
+                    <FlexLayout JustifyContent="Center" AlignItems="End">
+                        <Label Margin="0,0,0,20" x:Name="Headtext" Text="Winter Plant 
+                               Diseases" TextColor="White" FontSize="44" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    </FlexLayout>
+                </RelativeLayout>
+                <FlexLayout JustifyContent="Center" AlignItems="End">
+                    <Label Text="Common Diseases" TextColor="Black" FontSize="27" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                </FlexLayout>
+                <BoxView HeightRequest="1" BackgroundColor="Black"/>
+                <ScrollView VerticalScrollBarVisibility="Never" Padding="20,0,20,0">
+                    <StackLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                </Image.Source>
+                            </Image>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                </Image.Source>
+                            </Image>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                </Image.Source>
+                            </Image>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                </Image.Source>
+                            </Image>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                </Image.Source>
+                            </Image>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                </Image.Source>
+                            </Image>
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                </Image.Source>
+                            </Image>
+                            <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                    </Image.Source>
+                                </Image>
+                            </FlexLayout>
+                            <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                    </Image.Source>
+                                </Image>
+                            </FlexLayout>
+                            <FlexLayout JustifyContent="SpaceBetween" FlowDirection="LeftToRight" Padding="0,30,30,0">
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.SigmaLower}"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Margin="0,6,0,0" TextColor="Black" Text="Deasese"/>
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
+                                    </Image.Source>
+                                </Image>
+                            </FlexLayout>
+                        </FlexLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

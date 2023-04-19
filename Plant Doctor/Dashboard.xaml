@@ -92,7 +92,7 @@
 			        Value="48" />
                 <Setter
 			        Property="TabContentBackgroundColor"
-			        Value="#C2C3C3" />
+			        Value="White" />
                 <Setter
 			        Property="TabStripPlacement"
 			        Value="Bottom" />
@@ -106,7 +106,9 @@
         <Grid>
             <xct:TabView Style="{StaticResource CustomTabStyle}">
                 <xct:TabView.TabStripBackgroundView>
-                    <BoxView BackgroundColor="White" WidthRequest="30" CornerRadius="30,6,0,0" />
+                    <Frame  Padding="0" Margin="0" BorderColor="LightGray" CornerRadius="30" >
+                        <BoxView BackgroundColor="White" WidthRequest="30" TranslationY="3"/>
+                    </Frame>
                 </xct:TabView.TabStripBackgroundView>
                 <!--HOME-->
                 <xct:TabViewItem  PropertyChanged="Menuhidefxn"
@@ -162,7 +164,8 @@
                                     <Label Text="Plant Doctor" HorizontalTextAlignment="Center" FontSize="50" FontAttributes="Bold" Margin="0,0,0,25" TextColor="White"/>
                                     <Label Text="Plants fix the world, Let's fix them." TextColor="White" Opacity="0.7" FontSize="30" FontAttributes="None" HorizontalTextAlignment="Center" Margin="10,0,10,50" />
                                     <Button WidthRequest="260" BorderWidth="2" BorderColor="#CACACA"  Clicked="P_Diagnosticfxn" CornerRadius="10" Margin="0,0,0,30" HorizontalOptions="Center" Text="REQUEST DIAGNOSIS" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
-                                    <Button WidthRequest="260" BorderWidth="2" BorderColor="#CACACA" Clicked="Aboutfxn" CornerRadius="10" HorizontalOptions="Center" Text="ABOUT" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+                                    <Button  WidthRequest="260" BorderWidth="2" BorderColor="#CACACA" Clicked="Aboutfxn" CornerRadius="10" HorizontalOptions="Center" Text="About" BackgroundColor="#EBEEEF" TextColor="Black" FontSize="Large" TextTransform="None" FontAttributes="Bold" />
+
                                 </StackLayout>
                             </FlexLayout>
                             <Button x:Name="Menuhidebtn" Clicked="Menuhidefxn" BackgroundColor="Black" Opacity="0.7" IsVisible="False" IsEnabled="False"
@@ -315,11 +318,8 @@
                         Green
                     </xct:TabViewItem.TextColorSelected>
                     <Grid 
-                            BackgroundColor="Blue">
-                        <Label 
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"
-                                Text="TabContent2" />
+                            BackgroundColor="White">
+                        <homepage:lmorev/>
                     </Grid>
                 </xct:TabViewItem>
                 <!--Account-->

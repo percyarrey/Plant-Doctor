@@ -10,7 +10,7 @@ namespace Plant_Doctor
         public App()
         {
             InitializeComponent();
-            MainPage =new NavigationPage(new P_Diagnostic());
+            MainPage =new NavigationPage(new Dashboard());
         }
         protected override void OnStart()
         {

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plant_Doctor.View.Plantpage">
+    <ContentPage.Content>
+        <RelativeLayout>
+                <Image     
+                    
+                    Source="plantpageback"
+                    Aspect="AspectFill"
+                    BackgroundColor="GhostWhite"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+            <StackLayout Margin="0,20,0,0">
+                <FlexLayout HeightRequest="200" JustifyContent="Center" Margin="0,10,0,0">
+                    <Image x:Name="Headimg" HeightRequest="200" WidthRequest="200"></Image>
+                </FlexLayout>
+                <Label Text="Plant Infor" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold"/>
+                <Label Text="Description" HorizontalTextAlignment="Center" FontSize="16" TextDecorations="Underline" FontAttributes="Bold"/>
+                <Label Opacity="0.7" Text="Any of various plant diseases whose symptoms include sudden and severe yellowing, browning, spotting, withering, or dying of leaves, flowers, fruit, stems, or the entire plant." HorizontalTextAlignment="Center" FontSize="16"/>
+                <Label Text="Causes" HorizontalTextAlignment="Center" FontSize="16" TextDecorations="Underline" FontAttributes="Bold"/>
+                <Label Opacity="0.7" Text="Leaf blight disease is caused by the fungus Helminthosporium turcicum Pass. The disease develops on sorghum leaves particularly under humid conditions by producing reddish-purple or tan spots that coalesce to form large lesions. It attacksseedlings as well as older plants." HorizontalTextAlignment="Center" FontSize="16"/>
+                <Label Text="Treatment" HorizontalTextAlignment="Center" FontSize="16" TextDecorations="Underline" FontAttributes="Bold"/>
+                <Label Opacity="0.7" Text="Cover the soil under the plants with mulch, such as fabric, straw, plastic mulch, or dried leaves. Water at the base of each plant, using drip irrigation, a soaker hose, or careful hand watering. Pruning the bottom leaves can also prevent early blight spores from splashing up from the soil onto leaves." HorizontalTextAlignment="Center" FontSize="16"/>
+
+            </StackLayout>
+            </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
