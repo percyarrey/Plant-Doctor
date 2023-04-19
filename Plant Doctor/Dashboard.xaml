@@ -324,7 +324,7 @@
                 </xct:TabViewItem>
                 <!--Account-->
                 <xct:TabViewItem 
-                    Text="Account" 
+                    Text="Profile" 
                     ControlTemplate="{StaticResource TabItemTemplate}"
                     TextColor="LightGreen"
                     TextColorSelected="Green">
@@ -336,13 +336,40 @@
                         <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.AccountEdit}"/>
                     </xct:TabViewItem.IconSelected>
 
-                    <Grid 
-                            BackgroundColor="Green">
-                        <Label
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"
-                                Text="Account Page Not Available" />
-                    </Grid>
+                    <RelativeLayout>
+                        <Image Source="img1" 
+                           Aspect="AspectFill"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" HeightRequest="200"/>
+                        <StackLayout Margin="0,200,0,0">
+                            <FlexLayout JustifyContent="Center" TranslationY="-60">
+                                <Frame CornerRadius="100" Padding="3" HasShadow="False" BackgroundColor="LightGray">
+                                    <Image>
+                                        <Image.Source>
+                                            <FontImageSource Color="Green" Size="140" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Account}"/>
+                                        </Image.Source>
+                                    </Image>
+                                </Frame>
+                            </FlexLayout>
+                            <FlexLayout JustifyContent="Center" TranslationY="-100">
+                                <Frame CornerRadius="6" Padding="1" HasShadow="False" TranslationX="42" BackgroundColor="LightSeaGreen" BorderColor="LightGray">
+                                    <Image>
+                                        <Image.Source>
+                                            <FontImageSource Color="White" Size="40" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Camera}"/>
+                                        </Image.Source>
+                                    </Image>
+                                </Frame>
+                            </FlexLayout>
+                            <StackLayout>
+                                <FlexLayout>
+                                    <Image>
+                                        <Image.Source>
+                                            <FontImageSource Color="White" Size="40" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Camera}"/>
+                                        </Image.Source>
+                                    </Image>
+                                </FlexLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </RelativeLayout>
                 </xct:TabViewItem>
                 <xct:TabViewItem
                     TabTapped="P_diagpagefxn"

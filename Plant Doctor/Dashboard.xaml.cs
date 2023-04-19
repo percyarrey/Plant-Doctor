@@ -39,7 +39,7 @@ namespace Plant_Doctor
         private void Aboutfxn(object sender, EventArgs e)
         {
 
-            _ = Navigation.PushModalAsync(new NavigationPage(new About()));
+            Navigation.PushModalAsync(new NavigationPage(new About()));
         }
         private void Mainsignup(object sender, EventArgs e)
         {

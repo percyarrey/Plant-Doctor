@@ -11,13 +11,16 @@
                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
                    ></Image>
             <FlexLayout BackgroundColor="Black" Opacity="0.36"/>
-            <FlexLayout Margin="0,20,0,0" JustifyContent="Start" Padding="25,0,25,0">
+            <FlexLayout  AlignItems="Center" BackgroundColor="LightBlue" HeightRequest="60" Margin="0,0,0,0" JustifyContent="Start" Padding="25,0,25,0">
                 <StackLayout>
-                    <ImageButton Clicked="Backfxn">
-                        <ImageButton.Source>
-                            <FontImageSource Color="Green"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowLeft}"/>
-                        </ImageButton.Source>
-                    </ImageButton>
+                    <FlexLayout >
+                        <ImageButton Clicked="Backfxn" BackgroundColor="Transparent">
+                            <ImageButton.Source>
+                                <FontImageSource Color="Green" Size="30" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowLeft}"/>
+                            </ImageButton.Source>
+                        </ImageButton>
+                        <Button Clicked="Backfxn" Text="Back" Margin="4.9" TextColor="Black"/>
+                    </FlexLayout>
                 </StackLayout>
             </FlexLayout>
             <FlexLayout JustifyContent="Center">
