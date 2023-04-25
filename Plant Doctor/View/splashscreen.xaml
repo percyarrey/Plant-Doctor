@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plant_Doctor.View.splashscreen">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <FlexLayout JustifyContent="Center" AlignItems="Center">
+                <Frame HasShadow="True" Padding="0" CornerRadius="100" BackgroundColor="Transparent">
+                    <ImageButton BorderWidth="3" BorderColor="Green" HeightRequest="144.5" WidthRequest="144.5" CornerRadius="100" BackgroundColor="Transparent">
+
+                    </ImageButton>
+                </Frame>
+            </FlexLayout>
+            <FlexLayout JustifyContent="Center" AlignItems="Center">
+                <Image Rotation="-100" Scale="0" x:Name="Myimage" Source="logo" HeightRequest="140">
+
+                </Image>
+            </FlexLayout>
+            <FlexLayout AlignItems="End" JustifyContent="Center">
+                <Label Opacity="0.3" x:Name="Mytext" TranslationY="25" Text="Group I" TextColor="Green" FontAttributes="Bold" FontSize="35" Margin="0,0,0,60"/>
+            </FlexLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

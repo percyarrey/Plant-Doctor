@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using static Android.App.ActionBar;
+using static Java.Util.Jar.Attributes;
 
 namespace Plant_Doctor
 {
@@ -33,7 +34,14 @@ namespace Plant_Doctor
                 var myquery = db.Table<reguserdata>().FirstOrDefault();
                 if (myquery != null)
                 {
-                    Name.Text = myquery.fname+" "+ myquery.lname;
+                    if(myquery.fname== myquery.lname)
+                    {
+                        Name.Text = myquery.fname;
+                    }
+                    else
+                    {
+                        Name.Text = myquery.fname + " " + myquery.lname;
+                    }
                     Email.Text = myquery.email;
                 }
             }
@@ -106,9 +114,47 @@ namespace Plant_Doctor
         {
             DisplayAlert("Alert", "Page is NOT yet available", "Ok");
         }
-        private void Editaccountfxn(object sender, EventArgs e)
+        private async void Editaccountfxn(object sender, EventArgs e)
         {
-            DisplayAlert("Alert", "Edit account is NOT yet available", "Ok");
+            var dppath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dppath);
+            if (db.GetTableInfo("reguserdata").Count <= 0)
+            {
+                var result = await DisplayAlert("You have No Created Account", "Would you like to Sign Up ", "Sign Up", "Cancel");
+                if (result)
+                {
+                    _ = Navigation.PushModalAsync(new Startup());
+                }
+            }
+            else
+            {
+                var result = await DisplayAlert("Warning", "Would you like to save your changes", "Yes", "No");
+                if (result)
+                {
+                    var myquery = db.Table<reguserdata>().FirstOrDefault();
+                    if (myquery != null)
+                    {
+                        myquery.fname = Name.Text;
+                        myquery.email = Email.Text;
+                        var item = db.Table<reguserdata>().FirstOrDefault(x=>x.Userid==myquery.Userid);
+                        if (item != null)
+                            {
+                                item.fname = Name.Text;
+                                item.lname = Name.Text;
+                                item.email = Email.Text;
+                                db.Update(item);
+                            _ = DisplayAlert("Alert", "Changes Saved", "Ok");
+                            Console.WriteLine(db);
+                        }
+                    }
+                }
+                else
+                {
+                    _ = DisplayAlert("Alert", "Changes NOT Saved", "Ok");
+                }
+                
+            }
+            
         }
 
     }
