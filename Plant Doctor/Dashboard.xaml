@@ -229,7 +229,7 @@
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Bell}"/> 
                                             </Image.Source>
                                         </Image>
-                                        <Label Margin="0,6,0,0" TextColor="Black" Text="Notification"/>
+                                        <Button BackgroundColor="Transparent" Margin="0,6,0,0" TextColor="Black" Text="Notification"/>
                                         <CheckBox></CheckBox>
                                     </FlexLayout>
                                 </StackLayout>
@@ -241,7 +241,7 @@
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.GlobeLight}"/>
                                             </Image.Source>
                                         </Image>
-                                        <Label Text="Language" TextColor="Black"/>
+                                        <Button Clicked="Alertnonefxn" BackgroundColor="Transparent" Text="Language" TextColor="Black"/>
                                         <Image>
                                             <Image.Source>
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
@@ -258,7 +258,7 @@
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.GoogleMaps}"/>
                                             </Image.Source>
                                         </Image>
-                                        <Label Text="Location" TextColor="Black"/>
+                                        <Button Clicked="Alertnonefxn" BackgroundColor="Transparent" Text="Location" TextColor="Black"/>
                                         <Image>
                                             <Image.Source>
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
@@ -275,7 +275,7 @@
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.MoonWaningCrescent}"/>
                                             </Image.Source>
                                         </Image>
-                                        <Label Text="Dark theme" TextColor="Black"/>
+                                        <Button BackgroundColor="Transparent" Text="Dark theme" TextColor="Black"/>
                                         <CheckBox Color="Black"></CheckBox>
                                     </FlexLayout>
                                 </StackLayout>
@@ -287,7 +287,7 @@
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Star}"/>
                                             </Image.Source>
                                         </Image>
-                                        <Label Text="Rate Us" TextColor="Black"/>
+                                        <Button Clicked="Alertnonefxn" BackgroundColor="Transparent" Text="Rate Us" TextColor="Black"/>
                                         <Image>
                                             <Image.Source>
                                                 <FontImageSource Color="Black"  FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowRight}"/>
@@ -359,15 +359,43 @@
                                     </Image>
                                 </Frame>
                             </FlexLayout>
-                            <StackLayout>
-                                <FlexLayout>
-                                    <Image>
-                                        <Image.Source>
-                                            <FontImageSource Color="White" Size="40" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Camera}"/>
-                                        </Image.Source>
-                                    </Image>
+                            <StackLayout TranslationY="-60" Padding="40,0,40,0">
+                                <FlexLayout Margin="0">
+                                    <Frame Padding="0" Margin="0" HasShadow="False" CornerRadius="100">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Green" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.AccountBox}"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </Frame>
+                                    <Label Margin="30,0,0,0" TextColor="Black" FontAttributes="Bold" FontSize="20" Text="Name"/>
                                 </FlexLayout>
+                                <Entry x:Name="Name" Text="Sign Up to see you Name" />
+                                <Label Text="This is your combine First Name and Last Name"/>
                             </StackLayout>
+                            <StackLayout TranslationY="-60" Padding="40,0,40,0">
+                                <FlexLayout Margin="0">
+                                    <Frame Padding="0" Margin="0" HasShadow="False" CornerRadius="100">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="Green" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.Email}"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </Frame>
+                                    <Label Margin="30,0,0,0" TextColor="Black" FontAttributes="Bold" FontSize="20" Text="Email"/>
+                                </FlexLayout>
+                                <Entry Text="Sign Up to see you Email" x:Name="Email"/>
+                                <Label Text="This is your Email Address"/>
+                            </StackLayout>
+                            <FlexLayout JustifyContent="End" Padding="40,0,60,0">
+                                <Frame Padding="0" Margin="0"  CornerRadius="10">
+                                    <ImageButton Clicked="Editaccountfxn" BackgroundColor="Transparent" BorderColor="Green" BorderWidth="3" CornerRadius="10" Padding="10">
+                                        <ImageButton.Source>
+                                            <FontImageSource Color="Green" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ClipboardEditOutline}"/>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                </Frame>
+                            </FlexLayout>
                         </StackLayout>
                     </RelativeLayout>
                 </xct:TabViewItem>

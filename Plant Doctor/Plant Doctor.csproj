@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Data\" />
     <Folder Include="fonts\" />
   </ItemGroup>
@@ -33,6 +32,12 @@
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v12.0\Mono.Android.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\lmorev.xaml.cs">
+      <DependentUpon>lmorev.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

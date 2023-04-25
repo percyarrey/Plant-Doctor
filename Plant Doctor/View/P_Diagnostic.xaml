@@ -30,7 +30,7 @@
                         </FlexLayout>
                     </Grid>
                     <!--Search Diagnosis-->
-                    <Frame CornerRadius="30" x:Name="mytranlate" Padding="0" BackgroundColor="CadetBlue">
+                    <Frame CornerRadius="30" x:Name="mytranlate" Padding="0" BackgroundColor="Green">
                         <StackLayout Padding="15,0,15,0">
                             <Label  Margin="0,15,0,0" Text="Enter as much information as possible" TextColor="Black" FontAttributes="Bold" FontSize="17" HorizontalTextAlignment="Center"/>
                             <BoxView BackgroundColor="LightGray" HeightRequest="1"></BoxView>

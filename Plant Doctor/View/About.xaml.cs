@@ -25,7 +25,6 @@ namespace Plant_Doctor.View
         private void Backfxn(object sender, EventArgs e)
         {
             Navigation.PopModalAsync();
-			Navigation.PopAsync();
         }
 
         

@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:localfont="clr-namespace:TabViewApp.AppFonts"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="Plant_Doctor.View.lmorev">
-  <ContentView.Content>
-      <StackLayout Padding="20,0,20,0" BackgroundColor="White">
+             x:Class="Plant_Doctor.View.lmorev"
+             xmlns:local="clr-namespace:Plant_Doctor.Model"             >
+    <ContentView.BindingContext>
+        <local:ImageViewModel/>
+    </ContentView.BindingContext>
+    <ContentView.Content>
+        <StackLayout Padding="20,0,20,0" BackgroundColor="White">
             <FlexLayout Margin="0,20,0,0" JustifyContent="End" Padding="25,0,25,0">
                 <StackLayout>
                     <Frame Padding="2" HasShadow="True"  Margin="0,0,0,0" CornerRadius="22">
@@ -17,15 +21,31 @@
                     </Frame>
                 </StackLayout>
             </FlexLayout>
-            <Image Source="img1.png"/>
-            <Frame CornerRadius="30" Padding="1">
+            <StackLayout>
+        <CarouselView IsSwipeEnabled="False" IsScrollAnimated="True" x:Name="Mycarousel" IndicatorView="indicatorView" ItemsSource="{Binding Images}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="0" Margin="0" CornerRadius="10">
+                                <Image Source="{Binding  .}" Aspect="AspectFill" />
+                            </Frame>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView TranslationY="-30" x:Name="indicatorView"
+                   IndicatorColor="LightCyan"
+                   SelectedIndicatorColor="YellowGreen"
+                   HorizontalOptions="Center" IndicatorSize="10"/>
+            </StackLayout>
+
+            <!--<Image Source="img1.png"/>-->
+            <Frame  TranslationY="-20"  CornerRadius="30" Padding="1">
                 <FlexLayout JustifyContent="SpaceBetween">
                     <Button x:Name="Seasonbtn" Clicked="Seasonfxn" Text="Season" CornerRadius="30" BackgroundColor="LightBlue" Padding="0" Margin="0"></Button>
                     <Button x:Name="Plantbtn" Clicked="Plantfxn" Text="Plant" CornerRadius="30" BackgroundColor="Transparent" Padding="0" Margin="0"></Button>
                     <Button x:Name="Picbtn" Clicked="Picfxn" Text="Pictures" CornerRadius="30" BackgroundColor="Transparent" Padding="0" Margin="0"></Button>
                 </FlexLayout>
             </Frame>
-            <RelativeLayout>
+            <RelativeLayout Margin="0,10,0,0"  TranslationY="-30" >
                 <!--SEASON-->
                 <ScrollView x:Name="Season" VerticalScrollBarVisibility="Never" HeightRequest="455">
                     <Grid Margin="0,16,0,0" RowSpacing="1">
@@ -39,23 +59,23 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <RelativeLayout Grid.Row="0" Grid.Column="0">
-                            <ImageButton x:Name="s_img1" Clicked="img1fxn" HeightRequest="180" BackgroundColor="Transparent" Source="img2" ScaleY="1.1" TranslationY="10"/>
+                            <ImageButton x:Name="s_img1" Clicked="Img1fxn" HeightRequest="180" BackgroundColor="Transparent" Source="img2" ScaleY="1.1" TranslationY="10"/>
                             <Label Margin="40,110,0,0" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Winter" HorizontalTextAlignment="Center"/>
                         </RelativeLayout>
                         <RelativeLayout Grid.Row="0" Grid.Column="1">
-                            <ImageButton x:Name="s_img2"  Clicked="img2fxn"  BackgroundColor="Transparent" Source="img3"  ScaleY="1.1" TranslationY="40" />
+                            <ImageButton x:Name="s_img2"  Clicked="Img2fxn"  BackgroundColor="Transparent" Source="img3"  ScaleY="1.1" TranslationY="40" />
                             <Label Margin="25,110,0,0" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Summer" HorizontalTextAlignment="Center"/>
                         </RelativeLayout>
                         <RelativeLayout Grid.Row="1" Grid.Column="0">
-                            <ImageButton x:Name="s_img3"  Clicked="img3fxn"  HeightRequest="200" Aspect="AspectFill" BackgroundColor="Transparent" Source="img5" TranslationY="-15"/>
+                            <ImageButton x:Name="s_img3"  Clicked="Img3fxn"  HeightRequest="200" Aspect="AspectFill" BackgroundColor="Transparent" Source="img5" TranslationY="-15"/>
                             <Label Margin="50,130,0,0" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Rainy" HorizontalTextAlignment="Center"/>
                         </RelativeLayout>
                         <RelativeLayout Grid.Row="1" Grid.Column="1">
-                            <ImageButton x:Name="s_img4"  Clicked="img4fxn"  BackgroundColor="Transparent"  Source="img4" TranslationY="30" />
+                            <ImageButton x:Name="s_img4"  Clicked="Img4fxn"  BackgroundColor="Transparent"  Source="img4" TranslationY="30" />
                             <Label Margin="25,110,0,0"  TranslationY="30" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Autumn" HorizontalTextAlignment="Center"/>
                         </RelativeLayout>
                         <RelativeLayout Grid.Row="2" Grid.ColumnSpan="2">
-                            <ImageButton x:Name="s_img5"  Clicked="img5fxn"  Margin="0,0,0,40" BackgroundColor="Transparent"  Source="img6" Aspect="AspectFill"/>
+                            <ImageButton x:Name="s_img5"  Clicked="Img5fxn"  Margin="0,0,0,40" BackgroundColor="Transparent"  Source="img6" Aspect="AspectFill"/>
                             <Label Margin="40,50,0,0" TextColor="White" FontAttributes="Bold" FontSize="26" Text="Spring" HorizontalTextAlignment="Center"/>
                         </RelativeLayout>
                     </Grid>

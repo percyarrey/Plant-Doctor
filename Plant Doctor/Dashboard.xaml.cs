@@ -1,4 +1,5 @@
-﻿using Plant_Doctor.View;
+﻿using Plant_Doctor.Tables;
+using Plant_Doctor.View;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,16 @@ namespace Plant_Doctor
             var db = new SQLiteConnection(dppath);
             if (db.GetTableInfo("reguserdata").Count <= 0)
             {
-                Welcomesignup();
+                Welcomesignup(); 
+            }
+            else
+            {
+                var myquery = db.Table<reguserdata>().FirstOrDefault();
+                if (myquery != null)
+                {
+                    Name.Text = myquery.fname+" "+ myquery.lname;
+                    Email.Text = myquery.email;
+                }
             }
         }
         private async void Welcomesignup()
@@ -92,6 +102,14 @@ namespace Plant_Doctor
             }
             
         }
-        
+        private void Alertnonefxn(object sender, EventArgs e)
+        {
+            DisplayAlert("Alert", "Page is NOT yet available", "Ok");
+        }
+        private void Editaccountfxn(object sender, EventArgs e)
+        {
+            DisplayAlert("Alert", "Edit account is NOT yet available", "Ok");
+        }
+
     }
 }

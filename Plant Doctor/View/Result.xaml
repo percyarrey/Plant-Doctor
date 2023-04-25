@@ -1,9 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localfont="clr-namespace:TabViewApp.AppFonts"
              x:Class="Plant_Doctor.View.Result">
     <ContentPage.Content>
         <StackLayout>
+            <FlexLayout  AlignItems="Center" BackgroundColor="LightBlue" HeightRequest="50" Margin="0,0,0,0" JustifyContent="Start" Padding="5,0,25,0">
+                <StackLayout>
+                    <FlexLayout >
+                        <ImageButton Clicked="Backfxn" BackgroundColor="Transparent">
+                            <ImageButton.Source>
+                                <FontImageSource Color="Green" Size="30" FontFamily="MyIcon" Glyph="{x:Static  localfont:FontIconClass.ArrowLeft}"/>
+                            </ImageButton.Source>
+                        </ImageButton>
+                        <Button BackgroundColor="Transparent" Clicked="Backfxn" TranslationX="-20" Text="Back" Margin="0,0,0,0" TextColor="Black"/>
+                    </FlexLayout>
+                </StackLayout>
+            </FlexLayout>
             <StackLayout>
                 <Label Text="Results" HorizontalTextAlignment="Center" Margin="0,20,0,0" TextColor="LightGreen" FontAttributes="Bold" FontSize="46"></Label>
                 <ScrollView x:Name="Season" VerticalScrollBarVisibility="Never">

@@ -53,13 +53,26 @@ namespace Plant_Doctor.View
                 Source = Source.Remove(0, 6);
                 Navigation.PushAsync(new NavigationPage(new Plantpage(Source)));
             };
+            var startTimeSpan = TimeSpan.Zero;
+            var periodTimeSpan = TimeSpan.FromSeconds(3);
+
+            var timer = new System.Threading.Timer((e) =>
+            {
+                if (Mycarousel.Position <= 3)
+                {
+                    Mycarousel.Position++;
+
+                }
+                else {
+                    Mycarousel.Position = 0;
+                }
+            }, null, startTimeSpan, periodTimeSpan);
         }
         private void Mainsignup(object sender, EventArgs e)
         {
             _ = Navigation.PushModalAsync(new Startup());
             
         }
-
         private async void Seasonfxn(object sender, EventArgs e)
         {
             if (!(Season.IsVisible == true))
@@ -74,6 +87,9 @@ namespace Plant_Doctor.View
                 await Season.FadeTo(1, 300);
             }
         }
+
+
+
         private async void Plantfxn(object sender, EventArgs e)
         {
             if (!(Plant.IsVisible == true))
@@ -102,35 +118,35 @@ namespace Plant_Doctor.View
                 await Pic.FadeTo(1, 300);
             }
         }
-        private void img1fxn(object sender,EventArgs e)
+        private void Img1fxn(object sender,EventArgs e)
             {
                 var imageSource = s_img1.Source;
         var Source = imageSource.ToString();
         Source = Source.Remove(0, 6);
                 Navigation.PushAsync(new NavigationPage(new Seasonpage(Source)));
             }
-        private void img2fxn(object sender,EventArgs e)
+        private void Img2fxn(object sender,EventArgs e)
                 {
                     var imageSource = s_img2.Source;
         var Source = imageSource.ToString();
         Source = Source.Remove(0, 6);
                     Navigation.PushAsync(new NavigationPage(new Seasonpage(Source)));
                 }
-        private void img3fxn(object sender,EventArgs e)
+        private void Img3fxn(object sender,EventArgs e)
         {
             var imageSource = s_img3.Source;
             var Source = imageSource.ToString();
             Source = Source.Remove(0, 6);
             Navigation.PushAsync(new NavigationPage(new Seasonpage(Source)));
         }
-        private void img4fxn(object sender,EventArgs e)
+        private void Img4fxn(object sender,EventArgs e)
         {
             var imageSource = s_img4.Source;
             var Source = imageSource.ToString();
             Source = Source.Remove(0, 6);
             Navigation.PushAsync(new NavigationPage(new Seasonpage(Source)));
         }
-        private void img5fxn(object sender,EventArgs e)
+        private void Img5fxn(object sender,EventArgs e)
         {
             var imageSource = s_img5.Source;
             var Source = imageSource.ToString();

@@ -19,5 +19,10 @@ namespace Plant_Doctor.View
             NavigationPage.SetHasBackButton(this, false);
 
         }
+        private void Backfxn(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
     }
+
 }
